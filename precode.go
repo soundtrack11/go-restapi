@@ -85,7 +85,7 @@ func PostTask(res http.ResponseWriter, req *http.Request) {
 	}
 
 	if _, exists := tasks[task.ID]; exists {
-		http.Error(res, "Задача с таким ID уже существует", http.StatusConflict)
+		http.Error(res, "Задача с таким ID уже существует", http.StatusBadRequest)
 		return
 	}
 
